@@ -11,7 +11,12 @@ const initialState: State = {
 
 export function recipeReducer(state = initialState, action: RecipesActions.RecipesActions) {
     switch(action.type) {
-
+        case RecipesActions.SET_RECIPES:
+            return {
+                ...state,
+                recipes: [...action.payload]
+            };
+        default:
+            return state;
     }
-    return state;
 }
